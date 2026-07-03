@@ -1,0 +1,236 @@
+/* ------------------------------------------------------------------ */
+/* Hero — landing-page override (loaded after style.css)               */
+/* ------------------------------------------------------------------ */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem 5rem;
+    gap: 3.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Badge */
+.landing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(26, 71, 42, 0.15);
+}
+
+.landing-badge-dot {
+    width: 7px;
+    height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Title */
+.hero-title-new {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.08em;
+}
+
+.hero-title-dark { color: var(--ink); }
+
+.hero-title-accent {
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* Subtitle */
+.hero-subtitle-new {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 2rem;
+}
+
+/* CTA buttons */
+.hero-actions-new {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.btn-hero-primary:hover,
+.btn-hero-secondary:hover { background: var(--accent); }
+
+/* ------------------------------------------------------------------ */
+/* Mock browser window                                                  */
+/* ------------------------------------------------------------------ */
+
+.mock-window {
+    width: 100%;
+    max-width: 700px;
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.mock-titlebar {
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--border);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.mock-win-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.mock-win-dot-red    { background: #ff5f57; }
+.mock-win-dot-yellow { background: #febc2e; }
+.mock-win-dot-green  { background: #28c840; }
+
+.mock-window-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Stat tiles */
+.mock-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.mock-stat-card {
+    background: var(--paper);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 1rem 1rem 0.875rem;
+    text-align: left;
+}
+
+.mock-stat-label {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.mock-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+}
+
+.mock-stat-sub {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+}
+
+.mock-stat-up { color: #22c55e; }
+
+/* Bar chart */
+.mock-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.mock-chart-row {
+    display: grid;
+    grid-template-columns: 52px 1fr 56px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.mock-chart-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-align: left;
+}
+
+.mock-chart-track {
+    height: 8px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.mock-chart-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.mock-bar-food   { background: #c17f24; }
+.mock-bar-travel { background: #5b7fa6; }
+.mock-bar-bills  { background: #8b5e83; }
+
+.mock-chart-amt {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    text-align: right;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                           */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 3rem 1.5rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .mock-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 2.5rem 1rem 2.5rem; }
+    .mock-window { display: none; }
+}
