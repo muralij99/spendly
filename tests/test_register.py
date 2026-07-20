@@ -23,6 +23,7 @@ def test_valid_post_sets_session(client):
 
 def test_duplicate_email_shows_error(client):
     _post(client)
+    client.get("/logout")
     resp = _post(client)
     assert b"already exists" in resp.data
 
@@ -39,5 +40,6 @@ def test_short_password_shows_error(client):
 
 def test_mixed_case_email_is_duplicate(client):
     _post(client, email="alice@example.com")
+    client.get("/logout")
     resp = _post(client, email="Alice@EXAMPLE.COM")
     assert b"already exists" in resp.data
